@@ -4,14 +4,12 @@ def dump_dictionary_to_json(d):
 	with open('cleaned_word_dictionary.json', 'w') as fp:
 		json.dump(d, fp) 
 
+# removes all white-space and non alphabetic characters at start of definition string. 
 def clean_definition(definition):
-	cleaned = None
 	cur_idx = 0
 	while not definition[cur_idx].isalpha():
 		cur_idx += 1
-
-	cleaned = definition[cur_idx:]
-	return cleaned 
+	return definition[cur_idx:]
 
 def main():
 	word_dict = None
